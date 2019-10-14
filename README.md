@@ -6,7 +6,7 @@ search-img-in-img позволяет искать изображение в др
 
 ```bash
 
-$ npm install https://github.com/daniiltest/search-img-in-img
+$ npm install https://github.com/rogap/search-img-in-img
 ```
 
 ## Quick Example
