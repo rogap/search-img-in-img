@@ -1,0 +1,23 @@
+{
+  "name": "search-img-in-img",
+  "description": "search images in image",
+  "homepage": "https://github.com/rogap/search-img-in-img",
+  "repository": "github:rogap/search-img-in-img",
+  "version": "0.1.0",
+  "main": "index.js",
+  "keywords": [
+    "image",
+    "search image"
+  ],
+  "engines": {
+    "node": ">= 10.16.0",
+    "npm": ">= 6.9.0"
+  },
+  "dependencies": {
+    "canvas": ">= 2.5.0"
+  },
+  "author": {
+    "url": "webmyself.ru",
+    "discord": "discord.gg/RG9WQtP"
+  }
+}
