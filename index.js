@@ -95,7 +95,14 @@ function searchImgData(mainImg, desiredImg, {accuracy=100, deviation=0, from}={}
 }
 
 
-function compareArr(arr1, arr2, deviation=0) { // сравнивает 2 массива
+/**
+ * Cравнивает 2 массива
+ * @params {Array} [arr1] - первый массив
+ * @params {Array} [arr2] - второй массив
+ * @params {Number} [deviation] - погрешность сравнения
+ * @return {Boolean} - результат сравнения
+ **/
+function compareArr(arr1, arr2, deviation=0) {
 	const len = arr1.length
 	if (len != arr2.length) return false
 	for (let i = 0; i < len; i++) {

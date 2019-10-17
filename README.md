@@ -31,13 +31,14 @@ searchImg(pathInImg, searchedImg)
 * [searchImg](#searchImg)
 * [cutCenter](#cutCenter)
 * [cutQuarter](#cutQuarter)
+* [cutCenter](#cutCenter)
 * [getContext](#getContext)
 * [compareArr](#compareArr)
 
 ### searchImgData
 
 ```js
-/** searchImgData:
+/**
  * Осуществляет поиск изображения в изображении и возвращает первое найденное сходство
  * @param {Object-image} [mainImg] - обьект картинки с [data] содержащим массив цветов изображения
  * 	на котором будет искаться другое изображение
@@ -58,4 +59,74 @@ const desiredImg = canvasDesired.getImageData(0, 0, desiredWidth, desiredHeight)
 const { searchImgData } = require('search-img-in-img')
 const result = searchImgData(mainImg, desiredImg, {accuracy: 80, deviation: 30, from: [120, 50]})
 console.log(result) // Object {status: true, x: 130, y: 70, timeSearchData: 438}
+```
+
+### searchImg
+
+```js
+/**
+ * Проверяет наличие изображения в изображении
+ * @params {String} [mainPath] - пусть к изображению на котором будем проверять
+ * @params {Object or String} [desired] - содержит информацию для искомого изображеня или строку-путь
+ * @params {String} [desired.path] - путь к искомому изображению
+ * @params {String} [desired.func] - функция принимающая [ctx] и обычно используется для урезки изображения
+ * @params {Object} [params] - содержит параметры для функции поиска [searchImgData]
+ * @return {Promise} - результат функции [searchImgData]
+ **/
+```
+Пример смотрите с [cutQuarter(#cutQuarter)] ниже.
+
+### cutCenter
+
+```js
+/**
+ * Вырезает центр фото по заданным параметрам
+ * @params {Object} [params] - содержит параметры урезки фото:
+ * @params {Number} [params.width] - ширина получаеммого изображения
+ * @params {Number} [params.height] - высота получаеммого изображения
+ * @params {Number} [params.centerX] - смещение по оси Х
+ * @params {Number} [params.centerY] - смещение по оси Y
+ * @params {Object} [ctx] - контекст изображения
+ **/
+```
+Пример анологичен [cutQuarter(#cutQuarter)], см. ниже.
+
+### cutQuarter
+
+```js
+/**
+ * Вырезает один из 4-х частей фото (если мысленно разделить на 4 равные части)
+ * @params {Array} [params] - содержит 2 строки указывающие направление вырезания (какую часть вырезать)
+ * @params {Object} [ctx] - контекст изображения
+ **/
+
+// Пример:
+const mainPath = 'img/picture.png'
+// обрежит изображение "mainPath" так, что оставит правый верхний угол
+// и поиск будет вестись на обрезанном изображении
+const func = cutQuarter.bind(null, ["top", "right"])
+
+searchImg(mainPath, {path: "img/desired.jpg", func})
+.then(console.log)
+```
+
+### getContext
+
+```js
+/**
+ * Рисует изображение, создав новый канвас и возвращает контекст 2d
+ * @params {Object-image} [img] - загруженная картинка, обьект картинки
+ **/
+```
+
+### compareArr
+
+```js
+/**
+ * Cравнивает 2 массива
+ * @params {Array} [arr1] - первый массив
+ * @params {Array} [arr2] - второй массив
+ * @params {Number} [deviation] - погрешность сравнения
+ * @return {Boolean} - результат сравнения
+ **/
 ```
