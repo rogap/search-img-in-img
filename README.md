@@ -74,8 +74,7 @@ console.log(result) // Object {status: true, x: 130, y: 70, timeSearchData: 438}
  * @return {Promise} - результат функции [searchImgData]
  **/
 ```
-
-Пример смотрите с [cutQuarter(#cutQuarter)] ниже.
+Пример смотрите с [cutQuarter](#cutQuarter) ниже.
 
 ### cutCenter
 
@@ -90,8 +89,7 @@ console.log(result) // Object {status: true, x: 130, y: 70, timeSearchData: 438}
  * @params {Object} [ctx] - контекст изображения
  **/
 ```
-
-Пример анологичен [cutQuarter(#cutQuarter)], см. ниже.
+Пример анологичен [cutQuarter](#cutQuarter), см. ниже.
 
 ### cutQuarter
 
