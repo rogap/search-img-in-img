@@ -141,6 +141,8 @@ searchImg(mainPath, {path: "img/desired.jpg", func})
 
 ## License
 
+### search-img-in-img
+
 (The MIT License)
 
 Copyright (c) [2019] [rogap]
